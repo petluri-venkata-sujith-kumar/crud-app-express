@@ -1,7 +1,5 @@
-// const express = require("express");
 import express from "express";
 import PostSchema from "../models/PostSchema.js";
-// const PostSchema = require("../models/PostSchema");
 
 export const router = express.Router();
 

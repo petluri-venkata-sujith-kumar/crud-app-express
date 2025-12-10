@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// Destructuring 'Schema' and 'model' from mongoose is cleaner:
 const { Schema, model } = mongoose;
 
 // Define the Schema
