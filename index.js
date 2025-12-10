@@ -1,8 +1,12 @@
-const express = require("express");
-const cors = require("cors");
-const { PORT } = require("./config/config");
-const { dbConnection } = require("./config/db");
-const PostRoute = require("./routes/PostRoute");
+import express from "express";
+import cors from "cors";
+import { PORT } from "./config/config.js";
+import { dbConnection } from "./config/db.js";
+// const cors = require("cors");
+import { router } from "./routes/PostRoute.js";
+// const { PORT } = require("./config/config");
+// const { dbConnection } = require("./config/db");
+// const PostRoute = require("./routes/PostRoute");
 const app = express();
 
 let startServer = async () => {
@@ -15,7 +19,7 @@ let startServer = async () => {
   app.use(express.static("public"));
   app.use(cors());
 
-  app.use("/api", PostRoute);
+  app.use("/api", router);
   //listen to the server
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

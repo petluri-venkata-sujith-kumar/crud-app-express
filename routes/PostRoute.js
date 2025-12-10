@@ -1,7 +1,9 @@
-const express = require("express");
-const PostSchema = require("../models/PostSchema");
+// const express = require("express");
+import express from "express";
+import PostSchema from "../models/PostSchema.js";
+// const PostSchema = require("../models/PostSchema");
 
-const router = express.Router();
+export const router = express.Router();
 
 router.post("/create-post", async (req, res) => {
   try {
@@ -99,4 +101,4 @@ router.delete("/delete-post/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+// module.exports = router;

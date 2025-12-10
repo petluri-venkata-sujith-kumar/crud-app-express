@@ -1,6 +1,9 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+
+// Destructuring 'Schema' and 'model' from mongoose is cleaner:
 const { Schema, model } = mongoose;
-//if wont follow the schema it will throw an error casting error
+
+// Define the Schema
 const PostSchema = new Schema(
   {
     title: String,
@@ -10,4 +13,6 @@ const PostSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("Post", PostSchema);
+// Use ESM syntax for the default export
+const PostModel = model("Post", PostSchema);
+export default PostModel;
