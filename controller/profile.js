@@ -1,4 +1,4 @@
-import UserSchemaModel from "../models/UsersSchema";
+import UserSchemaModel from "../models/UsersSchema.js";
 
 /*
 ------@DESC GET ROUTES---------
@@ -12,13 +12,11 @@ import UserSchemaModel from "../models/UsersSchema";
 export const profile = async (res, req, next) => {
   try {
     let profileData = await UserSchemaModel.findOne({ _id: req.user.id });
-    res
-      .status(200)
-      .json({
-        success: true,
-        message: "profile fetched successfully",
-        payload: profileData,
-      });
+    res.status(200).json({
+      success: true,
+      message: "profile fetched successfully",
+      payload: profileData,
+    });
   } catch (err) {
     console.error(err);
   }

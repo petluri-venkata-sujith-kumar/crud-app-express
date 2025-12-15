@@ -4,6 +4,7 @@ import { PORT } from "./config/config.js";
 import { dbConnection } from "./config/db.js";
 import { router } from "./routes/PostRoute.js";
 import { authRouter } from "./routes/authRoute.js";
+import { courseRouter } from "./routes/courseRoute.js";
 const app = express();
 
 let startServer = async () => {
@@ -19,6 +20,7 @@ let startServer = async () => {
   // app.use("/api", router);
 
   app.use("/api", authRouter);
+  app.use("/api/v1", courseRouter);
   //listen to the server
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
